@@ -4,8 +4,6 @@ os: linux
 dist: trusty
 sudo: false
 
-notifications: change
-
 go:
   - 1.11
   - tip
