@@ -12,6 +12,9 @@ test: dep ## Run tests
 test-race: dep ## Run data race detector
 	@go test -race -short ${PKG_LIST}
 
+test-coverage: dep ## Run tests with coverage
+	@go test -v -cover -race -coverprofile=coverage.out ${PKG_LIST}
+
 dep: ## Get the dependencies
 	@dep ensure
 	@export GO111MODULE=on

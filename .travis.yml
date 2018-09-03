@@ -18,10 +18,14 @@ before_install:
 
 install:
   - dep ensure
+  - go get github.com/mattn/goveralls
 
 script:
   - make vet
-  - make test
+  - make test-coverage
+
+after_script:
+  - goveralls -coverprofile=coverage.out -service=travis-ci -repotoken=$COVERALLS_TOKEN
 
 matrix:
   allow_failures:
