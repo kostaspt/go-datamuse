@@ -7,10 +7,12 @@ import (
 	"time"
 )
 
+// Datamuse is the wrapper of all package's requests.
 type Datamuse struct {
-	ApiUrl *url.URL
+	APIURL *url.URL
 }
 
+// Results represent a list of Datamuse's results.
 type Results []struct {
 	Word           string   `json:"word"`
 	Score          int      `json:"score"`
@@ -18,20 +20,22 @@ type Results []struct {
 	Tags           []string `json:"tags,omitempty"`
 }
 
+// New create a new Datamuse instance.
 func New() *Datamuse {
 	dm := new(Datamuse)
 
 	url, _ := url.Parse("https://api.datamuse.com")
 
-	dm.ApiUrl = url
+	dm.APIURL = url
 
 	return dm
 }
 
+// Get creates a GET request to the APIURL and parses results.
 func (dm *Datamuse) Get() (Results, error) {
 	client := &http.Client{Timeout: 13 * time.Second}
 
-	resp, err := client.Get(dm.ApiUrl.String())
+	resp, err := client.Get(dm.APIURL.String())
 
 	if err != nil {
 		return nil, err
@@ -46,6 +50,7 @@ func (dm *Datamuse) Get() (Results, error) {
 	return *results, err
 }
 
+// Hyperlink returns the APIURL as string.
 func (dm *Datamuse) Hyperlink() string {
-	return dm.ApiUrl.String()
+	return dm.APIURL.String()
 }
