@@ -1,0 +1,28 @@
+language: go
+
+os: linux
+dist: trusty
+sudo: false
+
+notifications: change
+
+go:
+  - 1.11
+  - tip
+
+env:
+  - GO111MODULE=on DEP_VERSION="X.X.X"
+
+before_install:
+  - curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+
+install:
+  - dep ensure
+
+script:
+  - make vet
+  - make test
+
+matrix:
+  allow_failures:
+    - go: 'tip'
