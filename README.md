@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/kostaspt/go-datamuse.svg?branch=master)](https://travis-ci.org/kostaspt/go-datamuse)
 [![Coverage Status](https://coveralls.io/repos/github/kostaspt/go-datamuse/badge.svg?branch=master)](https://coveralls.io/github/kostaspt/go-datamuse?branch=master)
+[![Go Report Card](https://goreportcard.com/badge/github.com/kostaspt/go-datamuse)](https://goreportcard.com/report/github.com/kostaspt/go-datamuse)
 
 A [Go(lang)](https://golang.org/) library for the [Datamuse API](https://www.datamuse.com/api/).
 
