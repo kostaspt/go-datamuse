@@ -10,7 +10,7 @@
   version = "v1.1.1"
 
 [[projects]]
-  digest = "1:d08b9723bbea0b16db49cda5309976d244105485c15a1e1204a8ac38a0e712a1"
+  digest = "1:cb1c10f8d81b12875e3c9205957579a0b9f1ad9ef9871c546d2ddce376fc2581"
   name = "github.com/magefile/mage"
   packages = [
     "mg",
@@ -18,8 +18,8 @@
     "types",
   ]
   pruneopts = "UT"
-  revision = "b0bfbc25e9471eaab0d92757ad084123cd2a0bc9"
-  version = "v1.2.4"
+  revision = "49bafb86c808d73cabc5353d9ec040745dfab453"
+  version = "v1.4.0"
 
 [[projects]]
   digest = "1:0028cb19b2e4c3112225cd871870f2d9cf49b9b4276531f03438a88e94be86fe"
