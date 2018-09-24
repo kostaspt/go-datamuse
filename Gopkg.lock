@@ -10,15 +10,15 @@
   version = "v1.1.1"
 
 [[projects]]
-  digest = "1:f9a008412c6f09fc6a101318e2f1372b5a312be30868d9759d519d73dc945eda"
+  digest = "1:2d0b44ee6208d256e29f55764db1fa41e3ae33fac6cef138acae6a79c3bd748e"
   name = "github.com/magefile/mage"
   packages = [
     "mg",
     "sh",
   ]
   pruneopts = "UT"
-  revision = "8c5bce8a20e0cbb3a1cdce7677f81599dba05a95"
-  version = "v1.6.1"
+  revision = "a8460f7aa9523266febfca9df7a45025b7460152"
+  version = "v1.6.2"
 
 [[projects]]
   digest = "1:0028cb19b2e4c3112225cd871870f2d9cf49b9b4276531f03438a88e94be86fe"
