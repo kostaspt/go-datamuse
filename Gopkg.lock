@@ -17,8 +17,8 @@
     "sh",
   ]
   pruneopts = "UT"
-  revision = "0f9693c14357fbdce0050585b141ff9a88844a1b"
-  version = "v1.7.0"
+  revision = "11d15918ff3aa6f75cd6d3340a9507bb5309c679"
+  version = "v1.7.1"
 
 [[projects]]
   digest = "1:0028cb19b2e4c3112225cd871870f2d9cf49b9b4276531f03438a88e94be86fe"
