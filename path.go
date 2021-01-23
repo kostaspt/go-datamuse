@@ -1,8 +1,6 @@
 package datamuse
 
 import (
-	"github.com/kostaspt/go-datamuse/datamuse/related"
-	"github.com/kostaspt/go-datamuse/datamuse/vocabularies"
 	"path"
 	"strconv"
 )
@@ -21,34 +19,34 @@ func (dm *Datamuse) Suggestions(s string) *Datamuse {
 	return dm
 }
 
-// MeansLike - require that the results have a meaning related to this string value, which can be any word or
-// sequence of words. (This is effectively the reverse dictionary feature of OneLook.)
+// MeansLike - require that the results have a meaning related to this string value, which can be any word or sequence
+// of words. (This is effectively the reverse dictionary feature of OneLook.)
 func (dm *Datamuse) MeansLike(s string) *Datamuse {
 	dm.setQueryParam("ml", s)
 	return dm
 }
 
-// SoundsLike - require that the results are pronounced similarly to this string of characters. (If the string
-// of characters doesn't have a known pronunciation, the system will make its best guess using a text-to-phonemes
-// algorithm.)
+// SoundsLike - require that the results are pronounced similarly to this string of characters.
+// If the string of characters doesn't have a known pronunciation, the system will make its best guess using a
+// text-to-phonemes algorithm.
 func (dm *Datamuse) SoundsLike(s string) *Datamuse {
 	dm.setQueryParam("sl", s)
 	return dm
 }
 
-// SpelledLike - require that the results are spelled similarly to this string of characters, or that they
-// match this wildcard pattern. A pattern can include any combination of alphanumeric characters, spaces, and two
-// reserved characters that represent placeholders — * (which matches any number of characters) and ? (which matches
-// exactly one character).
+// SpelledLike - require that the results are spelled similarly to this string of characters, or that they match this
+// wildcard pattern. A pattern can include any combination of alphanumeric characters, spaces, and two reserved
+// characters that represent placeholders — * (which matches any number of characters) and ? (which matches exactly one
+// character).
 func (dm *Datamuse) SpelledLike(s string) *Datamuse {
 	dm.setQueryParam("sp", s)
 	return dm
 }
 
-// Related - require that the results, when paired with the word in this parameter, are in a predefined
-// lexical relation indicated by [code]. Any number of these parameters may be specified any number of times. An
-// assortment of semantic, phonetic, and corpus-statistics-based relations are available. At this time, these relations
-// are available for English-language vocabularies only.
+// Related - require that the results, when paired with the word in this parameter, are in a predefined lexical relation
+// indicated by [code]. Any number of these parameters may be specified any number of times. An assortment of semantic,
+// phonetic, and corpus-statistics-based relations are available. At this time, these relations are available for
+// English-language vocabularies only.
 func (dm *Datamuse) Related(code, s string) *Datamuse {
 	dm.setQueryParam("rel_"+code, s)
 	return dm
@@ -56,78 +54,78 @@ func (dm *Datamuse) Related(code, s string) *Datamuse {
 
 // RelatedNouns - Popular nouns modified by the given adjective, per Google Books Ngrams.
 func (dm *Datamuse) RelatedNouns(s string) *Datamuse {
-	return dm.Related(related.Nouns, s)
+	return dm.Related(RelatedNouns, s)
 }
 
 // RelatedAdjectives - Popular adjectives used to modify the given noun, per Google Books Ngrams.
 func (dm *Datamuse) RelatedAdjectives(s string) *Datamuse {
-	return dm.Related(related.Adjectives, s)
+	return dm.Related(RelatedAdjectives, s)
 }
 
 // RelatedSynonyms - Synonyms (words contained within the same WordNet synset).
 func (dm *Datamuse) RelatedSynonyms(s string) *Datamuse {
-	return dm.Related(related.Synonyms, s)
+	return dm.Related(RelatedSynonyms, s)
 }
 
 // RelatedTriggers - "Triggers" (words that are statistically associated with the query word in the same piece
 // of text.)
 func (dm *Datamuse) RelatedTriggers(s string) *Datamuse {
-	return dm.Related(related.Triggers, s)
+	return dm.Related(RelatedTriggers, s)
 }
 
 // RelatedAntonyms - Antonyms (per WordNet)
 func (dm *Datamuse) RelatedAntonyms(s string) *Datamuse {
-	return dm.Related(related.Antonyms, s)
+	return dm.Related(RelatedAntonyms, s)
 }
 
 // RelatedKindOf - "Kind of" (direct hypernyms, per WordNet)
 func (dm *Datamuse) RelatedKindOf(s string) *Datamuse {
-	return dm.Related(related.KindOf, s)
+	return dm.Related(RelatedKindOf, s)
 }
 
 // RelatedMoreGeneralThan - "More general than" (direct hyponyms, per WordNet)
 func (dm *Datamuse) RelatedMoreGeneralThan(s string) *Datamuse {
-	return dm.Related(related.MoreGeneralThan, s)
+	return dm.Related(RelatedMoreGeneralThan, s)
 }
 
 // RelatedComprises - "Comprises" (direct holonyms, per WordNet)
 func (dm *Datamuse) RelatedComprises(s string) *Datamuse {
-	return dm.Related(related.Comprises, s)
+	return dm.Related(RelatedComprises, s)
 }
 
 // RelatedPartOf - "Part of" (direct meronyms, per WordNet)
 func (dm *Datamuse) RelatedPartOf(s string) *Datamuse {
-	return dm.Related(related.PartOf, s)
+	return dm.Related(RelatedPartOf, s)
 }
 
 // RelatedFrequentFollowers - Frequent followers (w′ such that P(w′|w) ≥ 0.001, per Google Books Ngrams)
 func (dm *Datamuse) RelatedFrequentFollowers(s string) *Datamuse {
-	return dm.Related(related.FrequentFollowers, s)
+	return dm.Related(RelatedFrequentFollowers, s)
 }
 
 // RelatedFrequentPredecessors - Frequent predecessors (w′ such that P(w|w′) ≥ 0.001, per Google Books Ngrams)
 func (dm *Datamuse) RelatedFrequentPredecessors(s string) *Datamuse {
-	return dm.Related(related.FrequentPredecessors, s)
+	return dm.Related(RelatedFrequentPredecessors, s)
 }
 
 // RelatedRhymes - Rhymes ("perfect" rhymes, per RhymeZone)
 func (dm *Datamuse) RelatedRhymes(s string) *Datamuse {
-	return dm.Related(related.Rhymes, s)
+	return dm.Related(RelatedRhymes, s)
 }
 
 // RelatedApproximateRhymes - Approximate rhymes (per RhymeZone)
 func (dm *Datamuse) RelatedApproximateRhymes(s string) *Datamuse {
-	return dm.Related(related.ApproximateRhymes, s)
+	return dm.Related(RelatedApproximateRhymes, s)
 }
 
 // RelatedHomophones - Homophones (sound-alike words)
 func (dm *Datamuse) RelatedHomophones(s string) *Datamuse {
-	return dm.Related(related.Homophones, s)
+	return dm.Related(RelatedHomophones, s)
 }
 
 // RelatedConsonant - Consonant match
 func (dm *Datamuse) RelatedConsonant(s string) *Datamuse {
-	return dm.Related(related.Consonant, s)
+	return dm.Related(RelatedConsonant, s)
 }
 
 // Vocabulary - Identifier for the vocabulary to use.
@@ -144,13 +142,13 @@ func (dm *Datamuse) VocabularyDefault() *Datamuse {
 
 // VocabularySpanish - The 500,000-term vocabulary of words from Spanish-language books is used.
 func (dm *Datamuse) VocabularySpanish() *Datamuse {
-	return dm.Vocabulary(vocabularies.Spanish)
+	return dm.Vocabulary(VocabularySpanish)
 }
 
 // VocabularyWikipedia - The approximately 6 million-term vocabulary of article titles from the English-language
 // Wikipedia is used (updated monthly).
 func (dm *Datamuse) VocabularyWikipedia() *Datamuse {
-	return dm.Vocabulary(vocabularies.Wikipedia)
+	return dm.Vocabulary(VocabularyWikipedia)
 }
 
 // Topics - An optional hint to the system about the theme of the document being written. Results will be skewed toward
@@ -181,13 +179,12 @@ func (dm *Datamuse) Max(n uint) *Datamuse {
 }
 
 func (dm *Datamuse) appendToPath(s string) {
-	dm.APIURL.Path = path.Join(dm.APIURL.Path, s)
+	dm.apiURL.Path = path.Join(dm.apiURL.Path, s)
 }
 
 func (dm *Datamuse) setQueryParam(key, value string) {
-	q := dm.APIURL.Query()
-
+	q := dm.apiURL.Query()
 	q.Set(key, value)
 
-	dm.APIURL.RawQuery = q.Encode()
+	dm.apiURL.RawQuery = q.Encode()
 }

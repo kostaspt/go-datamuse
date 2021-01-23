@@ -1,46 +1,46 @@
-package related
+package datamuse
 
 // Nouns - Popular nouns modified by the given adjective, per Google Books Ngrams
-const Nouns string = "jja"
+const RelatedNouns string = "jja"
 
 // Adjectives - Popular adjectives used to modify the given noun, per Google Books Ngrams
-const Adjectives string = "jjb"
+const RelatedAdjectives string = "jjb"
 
 // Synonyms (words contained within the same WordNet synset)
-const Synonyms string = "syn"
+const RelatedSynonyms string = "syn"
 
 // Triggers (words that are statistically associated with the query word in the same piece of text.)
-const Triggers string = "trg"
+const RelatedTriggers string = "trg"
 
 // Antonyms (per WordNet)
-const Antonyms string = "ant"
+const RelatedAntonyms string = "ant"
 
 // KindOf (direct hypernyms, per WordNet)
-const KindOf string = "spc"
+const RelatedKindOf string = "spc"
 
 // MoreGeneralThan (direct hyponyms, per WordNet)
-const MoreGeneralThan string = "gen"
+const RelatedMoreGeneralThan string = "gen"
 
 // Comprises (direct holonyms, per WordNet)
-const Comprises string = "com"
+const RelatedComprises string = "com"
 
 // PartOf (direct meronyms, per WordNet)
-const PartOf string = "par"
+const RelatedPartOf string = "par"
 
 // FrequentFollowers (w′ such that P(w′|w) ≥ 0.001, per Google Books Ngrams)
-const FrequentFollowers string = "bga"
+const RelatedFrequentFollowers string = "bga"
 
 // FrequentPredecessors (w′ such that P(w|w′) ≥ 0.001, per Google Books Ngrams)
-const FrequentPredecessors string = "bgb"
+const RelatedFrequentPredecessors string = "bgb"
 
 // Rhymes ("perfect" rhymes, per RhymeZone)
-const Rhymes string = "rhy"
+const RelatedRhymes string = "rhy"
 
 // ApproximateRhymes (per RhymeZone)
-const ApproximateRhymes string = "nry"
+const RelatedApproximateRhymes string = "nry"
 
 // Homophones (sound-alike words)
-const Homophones string = "hom"
+const RelatedHomophones string = "hom"
 
 // Consonant match
-const Consonant string = "cns"
+const RelatedConsonant string = "cns"

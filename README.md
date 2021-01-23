@@ -8,8 +8,8 @@ A [Go(lang)](https://golang.org/) library for the [Datamuse API](https://www.dat
 
 ## Installation
 
-```
-$ go get github.com/kostaspt/go-datamuse
+```bash
+$ go get -u github.com/kostaspt/go-datamuse
 ```
 
 ## Example
@@ -17,14 +17,12 @@ $ go get github.com/kostaspt/go-datamuse
 ```go
 package main
 
-import "github.com/kostaspt/go-datamuse/datamuse"
+import "github.com/kostaspt/go-datamuse"
 
 func main() {
-	dm := datamuse.New()
-
-	results, _ := dm.Words().MeansLike("ringing in the ears").Get()
-    // Results: [{Word:tinnitus Score:51691 SyllablesCount:0 Tags:[syn n]} ...]
+	ml, _ := datamuse.New().Words().MeansLike("ringing in the ears").Get()
+	// [{Word:tinnitus Score:51691 SyllablesCount:0 Tags:[syn n]} ...]
 }
 ```
 
-See this [test](https://github.com/kostaspt/go-datamuse/blob/master/datamuse/examples_test.go) for more examples.
+Check [more examples](https://github.com/kostaspt/go-datamuse/blob/master/examples_test.go).
