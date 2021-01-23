@@ -1,6 +1,6 @@
 # go-datamuse
 
-[![Build Status](https://travis-ci.org/kostaspt/go-datamuse.svg?branch=master)](https://travis-ci.org/kostaspt/go-datamuse)
+[![Build Status](https://github.com/kostaspt/go-datamuse/workflows/CI/badge.svg)](https://github.com/kostaspt/go-datamuse/actions)
 [![Coverage Status](https://coveralls.io/repos/github/kostaspt/go-datamuse/badge.svg?branch=master)](https://coveralls.io/github/kostaspt/go-datamuse?branch=master)
 [![Go Report Card](https://goreportcard.com/badge/github.com/kostaspt/go-datamuse)](https://goreportcard.com/report/github.com/kostaspt/go-datamuse)
 
