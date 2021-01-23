@@ -1,0 +1,5 @@
+# Text files use LF line endings in this repository
+* text=auto
+
+# Go source files always have LF line endings
+*.go text eol=lf
