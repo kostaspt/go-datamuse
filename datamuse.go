@@ -12,13 +12,16 @@ type Datamuse struct {
 	apiURL *url.URL
 }
 
-// Results represent a list of Datamuse's results.
-type Results []struct {
+// Results represent a single Datamuse results.
+type Result struct {
 	Word           string   `json:"word"`
 	Score          int      `json:"score"`
 	SyllablesCount uint     `json:"numSyllables,omitempty"`
 	Tags           []string `json:"tags,omitempty"`
 }
+
+// Results represent a list of Datamuse results.
+type Results []Result
 
 // New create a new Datamuse instance.
 func New() *Datamuse {
