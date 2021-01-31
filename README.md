@@ -10,6 +10,8 @@
 
 A [Go(lang)](https://golang.org/) library for the [Datamuse API](https://www.datamuse.com/api/).
 
+Documentation: [pkg.go.dev/github.com/kostaspt/go-datamuse](https://pkg.go.dev/github.com/kostaspt/go-datamuse)
+
 ## Installation
 
 ```bash
