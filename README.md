@@ -15,7 +15,7 @@ Documentation: [pkg.go.dev/github.com/kostaspt/go-datamuse](https://pkg.go.dev/g
 ## Installation
 
 ```bash
-$ go get -u github.com/kostaspt/go-datamuse
+$ go get -u github.com/kostaspt/go-datamuse/v2
 ```
 
 ## Example
@@ -23,7 +23,7 @@ $ go get -u github.com/kostaspt/go-datamuse
 ```go
 package main
 
-import "github.com/kostaspt/go-datamuse"
+import "github.com/kostaspt/go-datamuse/v2"
 
 func main() {
 	ml, _ := datamuse.New().Words().MeansLike("ringing in the ears").Get()
