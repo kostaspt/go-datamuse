@@ -47,5 +47,6 @@ jobs:
 
       - name: Send coverage
         uses: shogo82148/actions-goveralls@v1
+        if: matrix.os == 'ubuntu-latest' && matrix.go == '1.18'
         with:
           path-to-profile: coverage.out
