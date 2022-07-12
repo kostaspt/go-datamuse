@@ -15,7 +15,7 @@ func Test_Words_Means_Like(t *testing.T) {
 	assert.Equal(t, "https://api.datamuse.com/words?ml=ringing+in+the+ears", dm.URL())
 	assert.Equal(t, "tinnitus", res[0].Word)
 	assert.NotZero(t, res[0].Score)
-	assert.EqualValues(t, []string{"syn", "n"}, res[0].Tags)
+	assert.EqualValues(t, []string{"syn", "n", "results_type:primary_external", "results_type:backfill_gloss"}, res[0].Tags)
 }
 
 // In order to find words related to duck that start with the letter b.
@@ -27,7 +27,7 @@ func Test_Words_Means_Like_Starts_With(t *testing.T) {
 	assert.Equal(t, "https://api.datamuse.com/words?ml=duck&sp=b%2A", dm.URL())
 	assert.Equal(t, "bird", res[0].Word)
 	assert.NotZero(t, res[0].Score)
-	assert.EqualValues(t, []string{"n"}, res[0].Tags)
+	assert.EqualValues(t, []string{"n", "results_type:primary_rel"}, res[0].Tags)
 }
 
 // In order to find words related to spoon that end with the letter a.
@@ -39,7 +39,7 @@ func Test_Words_Means_Like_Ends_With(t *testing.T) {
 	assert.Equal(t, "https://api.datamuse.com/words?ml=spoon&sp=%2Aa", dm.URL())
 	assert.Equal(t, "spatula", res[0].Word)
 	assert.NotZero(t, res[0].Score)
-	assert.EqualValues(t, []string{"n"}, res[0].Tags)
+	assert.EqualValues(t, []string{"n", "results_type:primary_rel"}, res[0].Tags)
 }
 
 // In order to find words that sound like elefint.
@@ -49,7 +49,7 @@ func Test_Words_Sounds_Like(t *testing.T) {
 
 	assert.NoError(t, err)
 	assert.Equal(t, "https://api.datamuse.com/words?sl=elefint", dm.URL())
-	assert.Equal(t, "elephant", res[0].Word)
+	assert.Equal(t, "elefant", res[0].Word)
 	assert.NotZero(t, res[0].Score)
 	assert.EqualValues(t, 3, res[0].SyllablesCount)
 }
